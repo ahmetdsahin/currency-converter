@@ -26,5 +26,6 @@ Here is a working live demo : https://ahmetdsahin-currency-converter.vercel.app/
 
 ## ScreenShots
 
-![Ekran görüntüsü 2025-02-27 190022](https://github.com/user-attachments/assets/5d768f0d-0e19-4d89-8908-2a5fccadb22d)
+![Ekran görüntüsü 2025-02-27 190022](https://github.com/user-attachments/assets/894a5784-e112-44b2-900d-6e63bf293373)
+
 
