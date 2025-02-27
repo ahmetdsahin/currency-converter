@@ -26,49 +26,56 @@ const App = () => {
     const countryCode = {
       USD: "US",
       TRY: "TR",
-      EUR: "EU"
+      EUR: "EU",
+      GBP: "GB"
     }[currency] || "US";
     return `https://flagsapi.com/${countryCode}/flat/64.png`;
   };
 
   return (
-    <div className="flex flex-col justify-center items-center">
-      <div className="flex flex-col items-center justify-center mt-[50px] gap-y-5 rounded-lg p-6 w-[400px] bg-blue-200">
-        <h1 className="font-bold text-black text-2xl tracking-wider">DÖVİZ KURU UYGULAMASI</h1>
+    <div className="flex flex-col justify-center items-center min-h-screen p-4 ">
+      <div className="flex flex-col items-center justify-center mt-10 gap-y-5 rounded-lg p-6 w-full max-w-md bg-blue-200 shadow-lg">
+        <h1 className="font-bold text-black text-2xl tracking-widest text-center">DÖVİZ KURU UYGULAMASI</h1>
         
-        <div className="flex flex-row gap-x-4 items-center">
-          <img src={getFlagUrl(fromCurrency)} alt={fromCurrency} className="w-8 h-8" />
-          <select value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)} className="w-[70px] h-[30px]">
-            <option value="USD">USD</option>
-            <option value="TRY">TRY</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-          </select>
+        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+          <div className="flex items-center gap-2 w-full">
+            <img src={getFlagUrl(fromCurrency)} alt={fromCurrency} className="w-8 h-8" />
+            <select value={fromCurrency} onChange={(e) => setFromCurrency(e.target.value)} className="w-full p-2 border rounded-md">
+              <option value="USD">USD</option>
+              <option value="TRY">TRY</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+            </select>
+          </div>
           <input
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             type="number"
-            className="w-[100px] h-[25px] border-2 rounded-lg p-4 bg-white"
+            className="w-full p-2 border rounded-md bg-white"
+            placeholder="Miktar"
           />
         </div>
 
-        <button onClick={exchange} className="w-[170px] bg-white rounded-lg p-2 cursor-pointer text-lg tracking-widest">
+        <button onClick={exchange} className="w-full bg-white hover:bg-blue-500 transition delay-150  hover:text-white rounded-md p-2 cursor-pointer text-lg tracking-widest shadow-md ">
           Çevir
         </button>
 
-        <div className="flex flex-row gap-x-4 items-center">
-          <img src={getFlagUrl(toCurrency)} alt={toCurrency} className="w-8 h-8" />
-          <select value={toCurrency} onChange={(e) => setToCurrency(e.target.value)} className="w-[70px] h-[30px]">
-            <option value="TRY">TRY</option>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
-            <option value="GBP">GBP</option>
-          </select>
+        <div className="flex flex-col md:flex-row gap-4 items-center w-full">
+          <div className="flex items-center gap-2 w-full">
+            <img src={getFlagUrl(toCurrency)} alt={toCurrency} className="w-8 h-8" />
+            <select value={toCurrency} onChange={(e) => setToCurrency(e.target.value)} className="w-full p-2 border rounded-md">
+              <option value="TRY">TRY</option>
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="GBP">GBP</option>
+            </select>
+          </div>
           <input
             value={result}
             readOnly
             type="number"
-            className="w-[100px] h-[25px] border-2 rounded-lg p-4 bg-white"
+            className="w-full p-2 border rounded-md bg-white"
+            placeholder="Sonuç"
           />
         </div>
       </div>
